@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+section {
+    justify-content: center;
+    display: flex;
+    margin-top: 100px;
+    padding: 0 20px; /* Added padding for mobile */
+}
+
+.box {
+    width: 40%;
+    height: 60vh;
+    border-radius: 25px;
+    text-align: center;
+    background: #EEAECA;
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    padding: 20px; /* Added padding */
+}
+
+.top {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.type {
+    margin-top: 25px;
+}
+
+.type input {
+    height: 25px;
+    width: 32vh;
+    max-width: 100%; /* Responsive width */
+    border-radius: 25px;
+    border: none;
+    padding: 10px;
+}
+
+::placeholder {
+    text-align: center;
+}
+
+.type button {
+    height: 25px;
+    width: 55px;
+    border-radius: 25px;
+    border: none;
+    background: #020024;
+    color: white;
+    margin-left: 15px;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    cursor: pointer; /* Added cursor */
+}
+
+.here1 {
+    margin-top: 25px;
+    text-align: left;
+    margin-left: 45px;
+    margin-right: 45px; /* Added for balance */
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.item button {
+    margin-left: auto;
+    height: 25px;
+    width: 55px;
+    border-radius: 25px;
+    border: none;
+    background-color: #EEAECA;
+    color: white;
+    cursor: pointer; /* Added cursor */
+}
+
+button span {
+    font-size: 0.5rem;
+}
+
+/* ============================================
+   MOBILE OPTIMIZATION - RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablets and smaller devices */
+@media (max-width: 768px) {
+    section {
+        margin-top: 50px;
+        padding: 0 15px;
+    }
+
+    .box {
+        width: 90%; /* Wider on tablets */
+        height: auto;
+        min-height: 60vh;
+        padding: 20px 15px;
+    }
+
+    .top {
+        font-size: 1.1rem;
+    }
+
+    .type input {
+        width: 100%;
+        max-width: 300px;
+        height: 35px; /* Slightly taller for easier touch */
+        font-size: 14px;
+    }
+
+    .type button {
+        height: 35px;
+        width: 65px;
+        margin-left: 10px;
+        font-size: 13px;
+    }
+
+    .here1 {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .item {
+        font-size: 14px;
+    }
+
+    .item button {
+        height: 30px;
+        width: 60px;
+        font-size: 12px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    section {
+        margin-top: 30px;
+        padding: 0 10px;
+    }
+
+    .box {
+        width: 100%; /* Full width on mobile */
+        height: auto;
+        min-height: 70vh;
+        border-radius: 20px;
+        padding: 15px;
+    }
+
+    .top {
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+
+    .type {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column; /* Stack input and button vertically */
+        align-items: center;
+        gap: 10px;
+    }
+
+    .type input {
+        width: 100%;
+        max-width: 280px;
+        height: 40px; /* Larger for easier touch */
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .type button {
+        height: 40px;
+        width: 80px;
+        margin-left: 0; /* Remove left margin */
+        font-size: 14px;
+    }
+
+    .here1 {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 20px;
+    }
+
+    .item {
+        font-size: 13px;
+        gap: 8px;
+        padding: 5px 0;
+    }
+
+    .item button {
+        height: 32px;
+        width: 65px;
+        font-size: 11px;
+    }
+
+    button span {
+        font-size: 0.45rem;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+    .box {
+        border-radius: 15px;
+        padding: 12px;
+    }
+
+    .top {
+        font-size: 0.95rem;
+    }
+
+    .type input {
+        max-width: 240px;
+        height: 38px;
+        font-size: 14px;
+    }
+
+    .type button {
+        height: 38px;
+        width: 75px;
+        font-size: 13px;
+    }
+
+    .here1 {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .item {
+        font-size: 12px;
+    }
+
+    .item button {
+        height: 30px;
+        width: 60px;
+        font-size: 10px;
+    }
+}
+
+/* Landscape orientation on phones */
+@media (max-width: 768px) and (orientation: landscape) {
+    section {
+        margin-top: 20px;
+    }
+
+    .box {
+        width: 85%;
+        min-height: auto;
+        height: auto;
+    }
+
+    .type {
+        flex-direction: row; /* Back to horizontal in landscape */
+    }
+
+    .type input {
+        max-width: 250px;
+    }
+
+    .type button {
+        margin-left: 10px;
+    }
+}
+
+/* Improve touch targets */
+@media (hover: none) and (pointer: coarse) {
+    /* For touch devices */
+    button {
+        min-height: 44px; /* Apple's recommended minimum touch target */
+        min-width: 44px;
+    }
+
+    .type input {
+        min-height: 44px;
+    }
+
+    .item button {
+        min-height: 40px;
+        min-width: 60px;
+    }
+}

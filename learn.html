@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="learn1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+</head>
+<body>
+    <section>
+        <div class="box">
+
+             <div class="top">
+
+                 <h1>MY THINGS</h1>
+                </div>
+                <div class="type">
+
+                    <input type="text" id="user" placeholder="Add your works">
+                    <button onclick="additems()">Add</button>
+                </div>
+            
+                <div id="here" class="here1"></div>
+            </div>
+        </section>
+    <script>
+
+      let items = [];
+
+      function additems(){
+        const text = document.getElementById('user').value.trim();
+           
+         if (text){
+            items.push(text);
+            displayItems();
+            document.getElementById('user').value = '';
+         }
+         else{
+            if (items.length === 0) {
+                document.getElementById('here').innerHTML = `<p>enter some text </p>`;
+            }
+         }
+        }
+
+      function displayItems() {
+        const output = document.getElementById('here');
+        if (items.length === 0) {
+          output.innerHTML = `<p>enter some text </p>`;
+          return;
+        }
+        output.innerHTML = '';
+        items.forEach((item, index) => {
+          output.innerHTML += `<div class="item"><input type="checkbox" onchange="toggleStrike(this)"><span>${item}</span><button onclick="deleteItem(${index})"><span class="material-symbols-outlined">close</span></button></div>`;
+        });
+      }
+
+      function deleteItem(index) {
+        items.splice(index, 1);
+        displayItems();
+      }
+
+        
+      function toggleStrike(checkbox) {
+         const span = checkbox.nextElementSibling;
+         const text = span.textContent;
+
+         if (checkbox.checked) {
+             span.innerHTML = `<del> ${text} </del>`;
+         }
+         else{
+             span.innerHTML = `${text}`;
+         }
+      }
+
+      document.getElementById('user').addEventListener('keypress', function(e) {
+          if (e.key === 'Enter'){
+              
+              additems();
+          }
+      });
+    </script>
+</body>
+</html>
